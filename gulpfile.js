@@ -11,8 +11,6 @@ gulp.task('clean', function () {
     var tsGeneratedFiles = [
         'src/lib/index.d.ts',
         'src/lib/index.js',
-        'src/lib/index.d.ts',
-        'src/lib/index.js',
         'src/lib/rotator.component.d.ts',
         'src/lib/rotator.module.d.ts',
         'src/lib/rotator.module.js',

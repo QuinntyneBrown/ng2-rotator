@@ -1,5 +1,3 @@
-/// <reference path="../../lib/ng2-jwplayer/index.d.ts" />
-
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
@@ -11,7 +9,7 @@ import "./rxjs-extensions";
 
 import { AppComponent } from './app.component';
 
-import { JwPlayerModule } from "../../lib/ng2-jwplayer/";
+import { RotatorModule } from "../../lib";
 
 import {
     RoutingModule,
@@ -29,16 +27,15 @@ const providers = [
 
 @NgModule({
     imports: [
-        JwPlayerModule,
         RoutingModule,
-
-        
 
         BrowserModule,
         HttpModule,
         CommonModule,
         FormsModule,
-        RouterModule
+        RouterModule,
+
+        RotatorModule
     ],
     providers: providers,
     declarations: [declarables],

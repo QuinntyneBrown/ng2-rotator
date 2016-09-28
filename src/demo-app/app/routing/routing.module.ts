@@ -1,13 +1,13 @@
 import { Routes, RouterModule } from '@angular/router';
 
 import {
-	LandingPageComponent
+	HomePageComponent
 } from "../pages";
 
 export const routes: Routes = [
     {
         path: '',
-        component: LandingPageComponent
+        component: HomePageComponent
     }
 ];
 
@@ -16,6 +16,6 @@ export const RoutingModule = RouterModule.forRoot([
 ]);
 
 export const routedComponents = [
-    LandingPageComponent
+    HomePageComponent
 ];
 

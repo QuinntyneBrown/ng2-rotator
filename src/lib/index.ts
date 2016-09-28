@@ -1,1 +1,2 @@
-export * from "./ng2-jwplayer";
+export * from "./rotator.component";
+export * from "./rotator.module";
