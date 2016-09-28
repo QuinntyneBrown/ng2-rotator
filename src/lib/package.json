@@ -1,0 +1,25 @@
+{
+  "name": "ng2-rotator",
+  "version": "1.0.0-alpha.0",
+  "description": "Angular 2 Rotator",
+  "module": "./index.js",
+  "typings": "./index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/QuinntyneBrown/ng2-rotator.git"
+  },
+  "keywords": [
+    "angular",
+    "components",
+    "jwplayer"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/QuinntyneBrown/ng2-rotator/issues"
+  },
+  "homepage": "https://github.com/QuinntyneBrown/ng2-rotator#readme",
+  "peerDependencies": {
+    "@angular/core": "2.0.0",
+    "@angular/common": "2.0.0"
+  }
+}
