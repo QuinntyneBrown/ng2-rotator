@@ -8,12 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
+var core_1 = require('@angular/core');
+var core_2 = require("@angular/core");
 var RotatorComponent = (function () {
     function RotatorComponent() {
     }
     RotatorComponent = __decorate([
-        core_1.Component({
+        core_2.Component({
             template: "\n      <div class=\"rotator\">\n          <h1>Rotator</h1>\n      </div>\n    ",
             styles: ["\n\n    "],
             selector: "rotator"
@@ -23,3 +24,16 @@ var RotatorComponent = (function () {
     return RotatorComponent;
 }());
 exports.RotatorComponent = RotatorComponent;
+var RotatorModule = (function () {
+    function RotatorModule() {
+    }
+    RotatorModule = __decorate([
+        core_1.NgModule({
+            exports: [RotatorComponent],
+            declarations: [RotatorComponent]
+        }), 
+        __metadata('design:paramtypes', [])
+    ], RotatorModule);
+    return RotatorModule;
+}());
+exports.RotatorModule = RotatorModule;

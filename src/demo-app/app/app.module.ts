@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 
 import { RotatorModule } from "../../lib";
 
+
 import {
     RoutingModule,
     routedComponents
@@ -27,15 +28,15 @@ const providers = [
 
 @NgModule({
     imports: [
+        RotatorModule,
         RoutingModule,
 
         BrowserModule,
         HttpModule,
         CommonModule,
         FormsModule,
-        RouterModule,
-
-        RotatorModule
+        RouterModule
+        
     ],
     providers: providers,
     declarations: [declarables],

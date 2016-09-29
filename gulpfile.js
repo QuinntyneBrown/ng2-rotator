@@ -9,28 +9,25 @@ var webpack = require("webpack-stream");
 
 gulp.task('clean', function () {
     var tsGeneratedFiles = [
-        'src/lib/index.d.ts',
-        'src/lib/index.js',
         'src/lib/rotator.component.d.ts',
-        'src/lib/rotator.module.d.ts',
-        'src/lib/rotator.module.js',
-        'src/lib/rotator.component.js'
+        'src/lib/rotator.component.js',
+        'src/lib/index.d.ts',
+        'src/lib/index.js'
     ];
-   
+
     return gulp.src(tsGeneratedFiles, { read: false })
         .pipe(clean());
 });
 
 gulp.task('compile', ['clean'], function () {
     var sourceTsFiles = [
-        './src/lib/rotator.component.ts',
-        './src/lib/index.ts',
-        './src/lib/rotator.module.ts',
+        './src/lib/src/rotator.component.ts',
+        './src/lib/src/index.ts',
         config.libraryTypeScriptDefinitions
     ];
 
     var tsResult = gulp.src(sourceTsFiles)
-        .pipe(inlineNg2Template({ base: '/src/lib/' }))
+        .pipe(inlineNg2Template({ base: '/src/lib/src/' }))
         .pipe(tsc(config.tsConfig));
 
     tsResult.dts.pipe(gulp.dest('./src/lib'));
@@ -38,26 +35,17 @@ gulp.task('compile', ['clean'], function () {
                     .pipe(gulp.dest('./src/lib'));
 });
 
-
-gulp.task("webpack", ["compile"], function () {
-    return gulp.src(['./src/demo-app/vendor.ts', './src/demo-app/polyfills.ts', './src/demo-app/main.ts'])
-    .pipe(webpack(config.webpackConfig))
-    .pipe(gulp.dest('src/demo-app/'));
-});
-
-gulp.task('watch', ['webpack'],function () {
+gulp.task('watch', function () {
     gulp.watch(
         [
-            './src/lib/rotator.component.ts',
-            './src/lib/rotator.component.html',
-            './src/lib/rotator.component.css',
-            './src/lib/index.ts',
-            './src/lib/rotator.module.ts'
+            './src/lib/src/rotator.component.ts',
+            './src/lib/src/rotator.component.html',
+            './src/lib/src/rotator.component.css',
+            './src/lib/src/index.ts',
         ],
-        ['compile', 'webpack']);
+        ['clean','compile']);
 });
 
-
-gulp.task('default',['compile', 'webpack', 'watch']);
+gulp.task('default', ['clean', 'compile', 'watch']);
 
 
