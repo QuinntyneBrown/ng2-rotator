@@ -11,6 +11,8 @@ gulp.task('clean', function () {
     var tsGeneratedFiles = [
         'src/lib/rotator.component.d.ts',
         'src/lib/rotator.component.js',
+        'src/lib/rotator.module.d.ts',
+        'src/lib/rotator.module.js',
         'src/lib/index.d.ts',
         'src/lib/index.js'
     ];
@@ -22,6 +24,7 @@ gulp.task('clean', function () {
 gulp.task('compile', ['clean'], function () {
     var sourceTsFiles = [
         './src/lib/src/rotator.component.ts',
+        './src/lib/src/rotator.module.ts',
         './src/lib/src/index.ts',
         config.libraryTypeScriptDefinitions
     ];
@@ -41,6 +44,7 @@ gulp.task('watch', function () {
             './src/lib/src/rotator.component.ts',
             './src/lib/src/rotator.component.html',
             './src/lib/src/rotator.component.css',
+            './src/lib/src/rotator.module.ts',
             './src/lib/src/index.ts',
         ],
         ['clean','compile']);
